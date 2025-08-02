@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Course Homepage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">OnlineCourse</div>
+    <nav>
+       <label class="switch">
+    <input type="checkbox" id="darkSwitch" onchange="toggleDarkMode()" />
+    <span class="slider"></span>
+  </label>
+      <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+      <ul id="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="openPopup('Web Development')">Join Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Online Courses</h1>
+    <p>Learn Anywhere, Anytime</p>
+    <p>Discover a variety of online courses to help you gain new skills and advance your career.</p>
+    <div class="buttons">
+      <button class="btn-primary" onclick="openPopup('Web Development')">Enroll Now</button>
+      <button class="btn-secondary" onclick="openPopup('Web Development')">Learn More</button>
+    </div>
+  </section>
+
+  <section class="courses" id="courses">
+    <h2>Our Courses</h2>
+    <div class="course-grid">
+      <div class="course-card"  onclick="openPopup('Social Media Marketing')">
+        <img src="https://img.icons8.com/color/96/facebook-like--v1.png" alt="Social Media" />
+        <h3>Social Media Marketing</h3>
+        <p>Grow your audience and build presence on platforms like Facebook, Instagram and TikTok.</p>
+      </div>
+      <div class="course-card"  onclick="openPopup('Paid advertising')">
+        <img src="https://img.icons8.com/color/96/paid.png" alt="Paid Ads" />
+        <h3>Paid Advertising</h3>
+        <p>Learn Google Ads, Facebook Ads, and campaign strategies to increase your ROI.</p>
+      </div>
+      <div class="course-card"  onclick="openPopup('Digital Marketing')">
+        <img src="https://static.thenounproject.com/png/digital-marketing-icon-2609910-512.png" alt="Digital Marketing" />
+        <h3>Digital Marketing</h3>
+        <p>Master content marketing, SEO, email campaigns, and more to grow your business.</p>
+      </div>
+      <div class="course-card " onclick="openPopup('Web Design And Developer')">
+        <img src="https://img.icons8.com/color/96/web-design.png" alt="Web Design" />
+        <h3>Web Design & Development</h3>
+        <p>Learn HTML, CSS, JavaScript and modern tools to build beautiful websites.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-form">
+      <h2>Have a Question?</h2>
+      <p>We’d love to hear from you. Ask anything related to our courses!</p>
+      <input type="text" placeholder="Your Name" />
+      <input type="email" placeholder="Your Email" />
+      <textarea placeholder="Your Question"></textarea>
+      <button>Send Message</button>
+    </div>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </section>
+  <!-- Popup Modal -->
+<div id="coursePopup" class="popup hidden">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2 id="popupCourseTitle">Enroll in a Course</h2>
+    <p id="popupCourseDescription"></p>
+
+    <form>
+      <label>Full Name</label>
+      <input type="text" placeholder="John Doe" required />
+
+      <label>Email Address</label>
+      <input type="email" placeholder="example@email.com" required />
+
+      <label>Payment Details</label>
+      <input type="text" placeholder="Card Number" required />
+      <div class="row">
+        <input type="text" placeholder="MM / YY" required />
+        <input type="text" placeholder="CVC" required />
+      </div>
+
+      <button type="submit">Enroll Now</button>
+    </form>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
